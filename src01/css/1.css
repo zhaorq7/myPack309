@@ -1,0 +1,9 @@
+#one{
+    width:230px;height:150px;
+    background-image: url(../img/bigger.jpg);
+}
+
+#two{
+    width:230px;height:150px;
+    background-image: url(../img/small.jpg);
+}

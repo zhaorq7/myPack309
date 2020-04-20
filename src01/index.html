@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <link rel="stylesheet" href="./css/1.css">-->
+</head>
+<!--<script src="../node_modules/jquery/dist/jquery.js"></script>-->
+<!--<script src="./main.js"></script>-->
+<!--<script src="../dist/main.js"></script>-->
+<body>
+<!-- 在package.json中配置  scripts  就可以使用 npm  run  build 来使用webpack了 -->
+<!-- -D  (-D   --dev)互为别名        npm  -D 和--save-dev 互为别名-->
+<!--build  是自定义名称-->
+<!--打包实现-->
+
+<!--
+    入口和出口
+    src main.js  打包前的文件   入口文件    ->  改为 main.js
+    dist/main.js  打包后的文件   出口文件    ->  改为  dist/bundle.js
+-->
+
+
+yarn   安装  webpack webpack-cli
+
+安装 jquery
+
+html-webpack-plugin 插件  将index.html也打包到dist中去
+yarn add html-webpack-plugin -D
+
+
+删除dist目录
+webpack-cleanup-plugin
+
+
+css 不认得 : css代码 展示出来 , 红色的 ,  Module parse failed: Unexpected token ...
+You may need an appropeiate [loader] to handle this file type  ...
+> ....
+> ....
+
+
+ERROR: in ./src/img/......
+You may need an appropeiate [loader] to handle this file type  ...
+> ....
+> ....
+
+
+file-loader   url-loader   一起装
+
+less-loader  less  一起装
+
+
+
+// 箭头函数  let   解构赋值  ...  ``   缺少降级的环节  babel-loader
+//yarn add babel-loader @babel/core(内部依赖) @babel/preset-env(基础插件集合) -D
+
+
+处理字体文件
+
+@别名 和  默认后缀  (按需)
+
+
+<hr>
+
+vue各个文件名称说明
+
+vue.common.js   基于commonJS的额模块构建
+vue.esm.js      基于 es Module的模块构建
+vue.js          基于 通用性 的模块构建 , 根据使用情形灵活调用不同类型的模块构建
+
+在 浏览器  node中 均可使用
+
+vue.min.js      和vue.js一样  ,是压缩后的版本
+vue.runtime.common.js      基于 commonJS 的运行时构建[删减版本]
+vue.runtime.esm.js         基于 es module 的运行时构建[删减版本]
+vue.runtime.js             基于 UMD 的运行时构建[删减版本]
+vue.runtime.min.js         基于 UMD 的运行时构建[删减版本]  压缩版
+
+runtime : 运行时 , 删减版 , 本身功能是有缺失 , 但是并不致命 , 如果相同的功能有多种实现 , 在删减版中只保留一种 , 运行快  减少资源耗费
+
+
+浏览器:   vue.js   vue.min.js
+node :   vue.common.js / vue.runtime.common.js
+webpack :
+    new Vue({})        要使用不带runtime系列
+    render方式渲染       无所谓
+
+
+
+
+vue的包如果用错了 , 浏览器console会有报错提醒 :
+You are using the runtime-only build of Vue where _________   ..........
+
+<ul>
+    <li>我是li</li>
+    <li>我是li</li>
+    <li>我是li</li>
+    <li>我是li</li>
+    <li>我是li</li>
+    <li>我是li</li>
+    <li>我是li</li>
+    <li>我是li</li>
+</ul>
+
+<div id="one"></div>
+<div id="two"></div>
+</body>
+</html>
